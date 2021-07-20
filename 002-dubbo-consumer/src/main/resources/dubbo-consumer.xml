@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+
+
+<!--  声明服务的名字，确保唯一性  -->
+    <dubbo:application name="002-dubbo-consumer"></dubbo:application>
+<!--  消费者不需要填写dubbo协议和端口  -->
+<!--    -->
+    <dubbo:reference
+            interface="com.huan.dubbo.service.IUserService"
+            id="iUserService"
+            url="dubbo:localhost:20880">
+    </dubbo:reference>
+    <dubbo:registry address="N/A"></dubbo:registry>
+</beans>
